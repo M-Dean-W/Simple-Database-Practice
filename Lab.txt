@@ -1,0 +1,32 @@
+CREATE SCHEMA starwars;
+USE starwars;
+
+CREATE TABLE empire (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(60) NOT NULL,
+    species VARCHAR(60) NOT NULL,
+    affiliation VARCHAR(60),
+    military_rank VARCHAR(20),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO empire (name, species, affiliation, military_rank) VALUES
+('Darth Vader', 'Human', 'Galactic Empire', 'Sith Lord'),
+('Grand Moff Tarkin', 'Human', 'Galactic Empire', 'Grand Moff'),
+('Emperor Palpatine', 'Human', 'Galactic Empire', 'Emperor'),
+('General Veers', 'Human', 'Galactic Empire', 'General'),
+('Admiral Piett', 'Human', 'Galactic Empire', 'Admiral'),
+('Captain Needa', 'Human', 'Galactic Empire', 'Captain');
+
+INSERT INTO empire (name, species, affiliation, military_rank) VALUE 
+('Grand Admiral Thrawn', 'Chiss', 'Galactic Empire', 'Grand Admiral');
+
+SELECT * FROM empire;
+
+UPDATE empire SET military_rank = 'Dead Failure' WHERE id = 6;
+
+SELECT * FROM empire;
+
+DELETE FROM empire WHERE id = 5;
+
+SELECT * FROM empire;
